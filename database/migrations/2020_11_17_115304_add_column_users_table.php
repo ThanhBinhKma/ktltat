@@ -14,10 +14,10 @@ class AddColumnUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('mssv');
-            $table->date('birthday');
-            $table->integer('phone');
-            $table->tinyInteger('change_password');
+            $table->string('mssv')->nullable();
+            $table->string('birthday')->nullable();
+            $table->string('phone')->nullable();
+            $table->tinyInteger('change_password')->nullable();
         });
     }
 

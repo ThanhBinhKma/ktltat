@@ -17,25 +17,42 @@
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                {!! $errors->first('name', '<p class="help-block text-danger">:message</p>') !!}
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="mssv" class="col-md-4 col-form-label text-md-right">{{ __('MSSV') }}</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="mssv" value="{{ old('mssv') }}">
+
+                                {!! $errors->first('mssv', '<p class="help-block text-danger">:message</p>') !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Birthday') }}</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="birthday" value="{{ old('birthday') }}" placeholder="dd/mm/yyyy">
+
+                                {!! $errors->first('birthday', '<p class="help-block text-danger">:message</p>') !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="phone" value="{{ old('phone') }}">
+
+                                {!! $errors->first('phone', '<p class="help-block text-danger">:message</p>') !!}
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                {!! $errors->first('email', '<p class="help-block text-danger">:message</p>') !!}
                             </div>
                         </div>
 
@@ -44,12 +61,7 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                {!! $errors->first('password', '<p class="help-block text-danger">:message</p>') !!}
                             </div>
                         </div>
 
